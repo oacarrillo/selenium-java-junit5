@@ -18,6 +18,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class CalculatorTests {
 
+	Calculator oscar = new Calculator();
 	@BeforeAll
 	static void antesTodo(){
 		System.out.println("antes todo");
@@ -40,16 +41,16 @@ class CalculatorTests {
 	@Test// hace que el metodo sea un metodo de prueba
 	@DisplayName("Prueba 1 = 1 + 1 = 2") // DAr un nombre a la prueba
 	void addsTwoNumbers() {
-		Calculator calculator = new Calculator();
-		int a=calculator.resta(1,2);
-		assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
+
+		int i=oscar.resta(1,2);
+		assertEquals(2, oscar.add(1, 1), "1 + 1 should equal 2");
 		System.out.println("suma1");
 	}
 
 	@Test// hace que el metodo sea un metodo de prueba
 	@DisplayName("Prueba 2 = 1 + 1 = 2") // DAr un nombre a la prueba
 	void addsTwoNumbers2() {
-		Calculator oscar = new Calculator();
+
 		assertEquals(2, oscar.add(1, 1), "1 + 1 should equal 2");
 		System.out.println("suma2");
 	}
@@ -62,8 +63,8 @@ class CalculatorTests {
 			"1,  100, 101"
 	})
 	void add(int first, int second, int expectedResult) {
-		Calculator calculator = new Calculator();
-		assertEquals(expectedResult, calculator.add(first, second),
+
+		assertEquals(expectedResult, oscar.add(first, second),
 				() -> first + " + " + second + " should equal " + expectedResult);
 		System.out.println("suma3");
 	}
