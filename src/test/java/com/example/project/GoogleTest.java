@@ -17,7 +17,6 @@ public class GoogleTest {
 
     @BeforeAll
     static void antesTodo(){
-
         System.out.println("driver");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -30,20 +29,18 @@ public class GoogleTest {
         driver.manage().window().setSize(new Dimension(1960, 824));
         driver.findElement(By.name("q")).sendKeys("cantantes de rock");
         driver.findElement(By.xpath("(//input[@name=\'btnK\'])[2]")).click();
-
     }
+
     @Test// hace que el metodo sea un metodo de prueba
     void busquedaGoogleNew() {
         driver.get("https://www.google.com/");
         driver.manage().window().setSize(new Dimension(1960, 824));
         driver.findElement(By.name("q")).sendKeys("cantantes de cumbia");
         driver.findElement(By.xpath("(//input[@name=\'btnK\'])[2]")).click();
-
-
     }
+
     @AfterAll
     static void despuesTodo(){
-
         driver.quit();
         System.out.println("final");
     }
