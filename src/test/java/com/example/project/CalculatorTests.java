@@ -50,7 +50,7 @@ class CalculatorTests {
 	@DisplayName("Prueba 2 = 1 + 1 = 2") // DAr un nombre a la prueba
 	void addsTwoNumbers2() {
 
-		assertEquals(2, ecuacion.add(1, 1), "1 + 1 should equal 2");
+		assertEquals(3, ecuacion.add(1, 2), "1 + 1 should equal 2");
 		System.out.println("suma2");
 	}
 
