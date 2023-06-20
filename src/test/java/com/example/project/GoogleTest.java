@@ -9,6 +9,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,10 +19,10 @@ public class GoogleTest {
 
     @BeforeAll
     static void antesTodo(){
-        System.out.println("driver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        //System.setProperty("webdriver.chrome.driver","C:\\drivers\\win\\chromedriver.exe");
+        driver = new ChromeDriver(options);
     }
 
     @Test// hace que el metodo sea un metodo de prueba
