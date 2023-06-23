@@ -21,6 +21,7 @@ public class GoogleTest {
     static void antesTodo(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-dev-shm-usage");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
     }
