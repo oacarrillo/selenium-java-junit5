@@ -24,8 +24,10 @@ public class GoogleTest {
         //options.addArguments("--remote-allow-origins=*");
         //WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver(options);
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless"); // Habilitar el modo sin cabeza
         WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();        
+        driver = new FirefoxDriver(options);  
     }
 
     @Test// hace que el metodo sea un metodo de prueba
