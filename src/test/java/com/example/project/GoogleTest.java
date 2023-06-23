@@ -10,7 +10,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,11 +20,14 @@ public class GoogleTest {
 
     @BeforeAll
     static void antesTodo(){
-        ChromeOptions options = new ChromeOptions();
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--remote-allow-origins=*");
+        //WebDriverManager.chromedriver().setup();
+        //driver = new ChromeDriver(options);
+        FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--disable-dev-shm-usage");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver(options);        
     }
 
     @Test// hace que el metodo sea un metodo de prueba
