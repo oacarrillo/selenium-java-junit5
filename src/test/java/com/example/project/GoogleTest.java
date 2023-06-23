@@ -24,10 +24,8 @@ public class GoogleTest {
         //options.addArguments("--remote-allow-origins=*");
         //WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver(options);
-        FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--remote-allow-origins=*");
         WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver(options);        
+        driver = new FirefoxDriver();        
     }
 
     @Test// hace que el metodo sea un metodo de prueba
